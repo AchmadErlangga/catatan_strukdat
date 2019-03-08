@@ -1,0 +1,177 @@
+--PERTEMUAN PERTAMA--
+
+#Review
+
+#Variabel dan tipe data
+-Variabel:
+-Tipe data:
+ Integer(bil.bulat), Float(bil.desimal), String, Boolean(True or False)
+
+#Algoritma
+-Sequential
+-Branching/pilihan
+-Iteration
+
+#Function
+Pengelompokkan program berdasarkan fungsinya masing-masing
+
+#Faktorial
+def faktorial():
+    x=int(input('Masukkan angkanya= '))
+    faktorial=1
+    for i in range(1,x+1):
+        faktorial=faktorial*i
+    print(faktorial)
+faktorial()
+
+#Bilangan genap
+num=int(input('Angkanya = '))
+count=1
+i=0
+while count<=num:
+    if i%2==0:
+        print(count,'.',i)
+        count=count+1
+    i=i+1
+
+#Bilangan ganjil
+x=int(input('Number = '))
+for i in range(x):
+    if i%2==1:
+        print(i)
+
+#3 angka bilangan ganjil pertama
+jumlah=0
+i=3
+for i in range(1,11):
+    if (i%3!=0):
+        continue
+    print(i)
+
+#Bilangan prima
+angka=int(input('Masukkan angka= '))
+for x in range(2,angka+1):
+    main=True
+    for y in range(2,x):
+        if x%y==0:
+            main=False
+    if main:
+        print(x,end=' ')
+
+
+--PERTEMUAN KEDUA--
+
+#Upload tugas praktikum rabu 18.00 - pengumpulan kamis 07.00
+
+#list = mengumpulkan data dalam satu wadah yang sama.
+
+#Struktur data
+-stacks
+-queue
+-list
+
+#Stacks(last in first out)
+-stacks(), inisialisasi stacks yang kosong
+-push(data), penambahan data baru
+-pop(), penghapusan data / dikeluarkan
+-peek(), informasi data yang terletak pada top
+-isEmpty, pengecekan(true->kosong)
+-size(), informasi jumlah data
+
+def stack():
+    s=[]
+    return(s)
+def push(s,data):
+    s.append(data)
+def pop(s):
+    data=s.pop()
+    return(data)
+def peek(s):
+    return(s[len(s)-1])
+def isEmpty(s):
+    return(s==[])
+def size(s):
+    return(len(s))
+
+import moduleStack as s
+
+st=s.stack()
+s.isEmpty(st)
+s.push(st,100)
+s.push(st,23)
+s.push(st,34)
+s.pop(st)
+s.push(st,56)
+s.pop(st)
+print(st)
+
+import moduleStack as s
+
+kata=input('Kata : ')
+st=s.stack()
+hasil=''
+for i in range(len(kata)):
+    s.push(st,kata[i])
+for i in range(len(kata)):
+    hasil=hasil+s.pop(st)
+print(hasil)
+
+
+--PERTEMUAN KETIGA--
+
+konversi biner menggunakan stack
+PR(konversi okta menggunakan stack & ubah infix ke post dan pre fix
+kemudian evaluasi keduanya)
+
+#eksepresi aritmatika
+infix=operator didalam dua buah operan-->A+B-C
+prefix=operator sebelum dua buah operan-->+AB<->D-->-DC
+postfix=operator sesudah dua buah operan-->AB+<->D-->DC-
+
+#Contoh
+A+B-C 
+prefix -+ABC & postfix AB+C-
+
+87+5*=
+push dua buah operan (8 & 7)
++ pop dua buah operan (8 +7)
+push hasil (15)
+push 5
+pop (5 * 15)
+output(75)
+
+#Queues/antrian(first in first out)
+-queue(), inisialisasi
+-enqueue(data), penambahan
+-dequeue(), penghapusan
+-isEmpty(), pengecekan
+-size(), informasi jumlah antrian
+
+def createQueue():
+    q=[]
+    return(q)
+def enqueue(q,data):
+    q.insert(0,data)
+    return(q)
+def dequeue(q):
+    data=q.pop()
+    return(data)
+def isEmpty(q):
+    return(q==[])
+def size(q):
+    return(len(q))
+
+import moduleStack as s
+
+bilangan=int(input('Masukkan angka = '))
+hasilbagi=bilangan
+st=s.stack()
+while hasilbagi>0:
+    temp=hasilbagi%2
+    s.push(st,temp)
+    hasilbagi=hasilbagi//2
+
+temp=''
+while not(s.isEmpty(st)):
+    temp=temp + str(s.pop(st))
+print(temp)
