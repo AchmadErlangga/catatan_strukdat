@@ -1,0 +1,136 @@
+#Deque
+deque(), inisialisasi
+addFront(data), penambahan data diujung front
+addReae(data), penamabahan data diujung rear
+removeFront, penghapusan data ujung front
+removeRear, penghapusan data ujung rear
+
+def createDeque():
+    d=[]
+    return(d)
+def addFront(d,data):
+    d.insert(0,data)
+    return(d)
+def addRear(d,data):
+    d.append(data)
+    return(d)
+def removeRear(d):
+    data=d.pop(data)
+    return(d)
+def removeFront(d):
+    data=d.pop(data)
+    return(d)
+def isEmpty(d):
+    return (d==[])
+def size:
+    return(len(d))
+
+def createQueue():
+    q=[]
+    return(q)
+def enqueue(q,data):
+    q.insert(0,data)
+    return(q)
+def dequeue(q):
+    data=q.pop()
+    return(data)
+def isEmpty(q):
+    return(q==[])
+def size(q):
+    return(len(q))
+
+def ularnaga(a,hitung):
+    q=createQueue()
+    for  i in a:
+        enqueue(q,i)
+    print(q)
+data=['A','B','C','D']
+ularnaga(data,3)
+
+class Bilangankompleks:
+    def __init__(self,a,b):
+        self.real=a
+        self.im=b
+    def display(self):
+        #print(self.real,'+',self.im,'i')
+        temp=str(self.real)+'+'+str(self.im)+'i'
+        return temp
+    def __str__(self):
+        return str(self.real)+'+'+str(self.im)+'i'
+    def addNum(self,num1,num2):
+        self.real=num1.real+num2.real
+        self.im=num1.im+num2.im
+
+data=Bilangankompleks(4,6)
+print(data)
+print(data.display())
+data1=Bilangankompleks(2,5)
+data2=Bilangankompleks(3,4)
+data3=Bilangankompleks(0,0)
+data3.addNum(data1,data2)
+print(data1)
+print(data2)
+print(data3)
+
+class Node:
+    def __init__(self, init_data):
+        self.data=init_data
+        self.next=None
+    def getData(self):
+        return self.data
+    def getNext(self):
+        return self.next
+    def setData(self, newdata):
+        self.data = newdata
+    def setNext(self, new_next):
+        self.next=new_next
+
+a=Node(93)
+b=Node(20)
+print(b.getData())
+a.setNext(b)
+print(a.getNext())
+print(a.getNext().getData())
+c=Node(45)
+b.setNext(c)
+print(c.getData())
+
+class LinkedList:
+    def __init__(self):
+        self.head=None
+    def isEmpty(self):
+        return self.head==None
+    def add(self, item):
+        temp=Node(item)
+        temp.setNext(self.head)
+        self.head=temp
+    def size(self):
+        current=self.head
+        count=0
+        while current != None:
+            count=count+1
+            current=current.getNext()
+        return count
+    def Display(self):
+        current=self.head
+        while current!=Node:
+            print(current.getData())
+            current=current.getNext()
+    def search(self,item):
+        current=self.head
+        found=False
+        while current!=None and not found:
+            if current.getData==item:
+                Found=True
+            current.getNext()
+    def remove(self, item):
+        current=self.head
+        previous=None
+        found=False
+        while not found
+
+mylist=LinkedList()
+mylist.add(34)
+print(mylist.head.data)
+mylist.add(21)
+mylist.Display()
